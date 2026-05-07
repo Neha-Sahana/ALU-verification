@@ -60,7 +60,7 @@ always @(posedge clk or posedge rst) begin
                       g <= 1'b0;
                      e <= 1'b0;
                      l <= 1'b0;
-                      err <= 1'b0;
+                      err <= 1'b1;
                     end
 
                     2'b01: begin
@@ -315,7 +315,7 @@ always @(posedge clk or posedge rst) begin
                 g <= 1'b0;
                 e <= 1'b0;
                 l <= 1'b0;
-                err <= 1'b0;
+                err <= 1'b1;
                     end
 
                     2'b01: begin

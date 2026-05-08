@@ -345,9 +345,9 @@ always @(posedge clk or posedge rst) begin
                 l <= 1'b0;
                 err <= 1'b0;
                         case(cmd)
-                            4'd6: begin temp <={{N{1'b0}},~opb};res<=temp; end
-                            4'd8:begin temp <= (opb >> 1);res<=temp; end
-                            4'd9:begin temp <= (opb << 1);res<=temp; end
+                            4'd7: begin temp <={{N{1'b0}},~opb};res<=temp; end
+                            4'd10:begin temp <= (opb >> 1);res<=temp; end
+                            4'd11:begin temp <= (opb << 1);res<=temp; end
                             default: begin temp <= {2*N{1'b0}}; err<=1'b1;res<=temp; end
                         endcase
                     end
@@ -397,9 +397,9 @@ always @(posedge clk or posedge rst) begin
         4'd6: begin temp <={{N{1'b0}},~opa};res<=temp; end
         4'd8:begin temp <= (opa >> 1);res<=temp; end
         4'd9:begin temp <= (opa << 1);res<=temp; end
-       4'd6: begin temp <={{N{1'b0}},~opa};res<=temp; end
-        4'd8:begin temp <= (opa >> 1);res<=temp; end
-        4'd9:begin temp <= (opa << 1);res<=temp; end
+       4'd7: begin temp <={{N{1'b0}},~opb};res<=temp; end
+         4'd10:begin temp <= (opb >> 1);res<=temp; end
+       4'd11:begin temp <= (opb << 1);res<=temp; end
         4'd12: begin
             err <= (|opb[7:4]) ? 1'b1 : 1'b0;
 

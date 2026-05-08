@@ -514,6 +514,11 @@ always @(posedge clk or posedge rst) begin
 
                         endcase
                     end
+            default: begin
+            temp <= {2*N{1'b0}};
+            res  <= temp;
+            err  <= 1'b1;
+        end
                 endcase
             end
         end

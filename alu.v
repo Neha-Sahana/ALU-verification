@@ -172,13 +172,13 @@ always @(posedge clk or posedge rst) begin
 //                                   end
                                    else if(cnt == 2'b01) begin
                                         cnt <= cnt + 1'b1;
-                                        temp <= {2*N{1'b0}};
-                                        res<=temp;
+                                        res <= {2*N{1'b0}};
+                                        //res<=temp;
                                     end
 
                                     else if(cnt == 2'b10) begin
-                                        temp <= (tempa + 1'b1) * (tempb + 1'b1);
-                                        res<=temp;
+                                        res <= (tempa + 1'b1) * (tempb + 1'b1);
+                                       // res<=temp;
                                        // cnt <= 2'b00;
                                         if(cmd==4'd9 )
                                            begin
@@ -198,8 +198,8 @@ always @(posedge clk or posedge rst) begin
                             4'd10: begin
                              if(mode != 1'b1 || cmd != 4'd10) begin
                                     cnt <= 2'b00;
-                                    temp <= {2*N{1'b0}};
-                                    res<=temp;
+                                    res <= {2*N{1'b0}};
+                                    //res<=temp;
                                 end
 
                                 else begin
@@ -208,19 +208,19 @@ always @(posedge clk or posedge rst) begin
                                         tempa <= opa;
                                         tempb <= opb;
                                         cnt <= cnt + 1'b1;
-                                        temp <= {2*N{1'b0}};
-                                        res<=temp;
+                                        res <= {2*N{1'b0}};
+                                        //res<=temp;
                                     end
 
                                    else if(cnt == 2'b01) begin
                                         cnt <= cnt + 1'b1;
-                                        temp <= {2*N{1'b0}};
-                                        res<=temp;
+                                        res <= {2*N{1'b0}};
+                                        //res<=temp;
                                     end
 
                                     else if(cnt == 2'b10) begin
-                                        temp <= (tempa << 1) * tempb;
-                                        res<=temp;
+                                        ress <= (tempa << 1) * tempb;
+                                        //res<=temp;
                                         
                                         if(cmd==4'd10)
                                            begin

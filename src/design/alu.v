@@ -14,7 +14,6 @@ output reg oflow,cout,g,e,l,err
 
 reg [1:0] cnt;
 reg [N-1:0] tempa,tempb;
-reg rep=1'b0;
 reg [2*N-1:0] temp;
 
 always @(posedge clk or posedge rst) begin
@@ -243,12 +242,12 @@ always @(posedge clk or posedge rst) begin
                                 res<=temp;
                                 oflow <= (opa[N-1] == opb[N-1]) && (opa[N-1] != res[N-1]);
 
-                                if(opa > opb) begin
+                               if($signed(opa) > $signed(opb)) begin
                                     g <= 1'b1;
                                     e <= 1'b0;
                                     l <= 1'b0;
                                 end
-                                else if(opa == opb) begin
+                                else if($signed(opa) == $signed(opb)) begin
                                     g <= 1'b0;
                                     e <= 1'b1;
                                     l <= 1'b0;

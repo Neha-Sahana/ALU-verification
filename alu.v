@@ -14,7 +14,6 @@ output reg oflow,cout,g,e,l,err
 
 reg [1:0] cnt;
 reg [N-1:0] tempa,tempb;
-reg rep=1'b0;
 reg [2*N-1:0] temp;
 
 always @(posedge clk or posedge rst) begin
